@@ -35,6 +35,6 @@ function list() {
 
 	xhr.send(null);
 
-	timerI = setTimeout("list()", 300000000);
+	timerI = setTimeout("list()", 2000);
 	timerR = true;
 }
