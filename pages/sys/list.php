@@ -53,7 +53,7 @@
 
     $result = $select->fetchAll(PDO::FETCH_OBJ);
 
-    if($result <= 0) {
+    if($result == null) {
        	echo "<code>A conversa não vai se iniciar sozinha... Por que não começa dizendo um Oi?</code>";
        }
 	else {
