@@ -1,5 +1,8 @@
+<?php 
+	$_SESSION['idFor'] = $_GET['user'];
+ ?>
 <div class="content">
-	<div class="list"></div>
+	<div id="list"></div>
 	<hr>
 
 	<form action="" method="POST" enctype="multipart/form-data" data-js="form-chat">
@@ -13,7 +16,6 @@
 			</div>
 		</div>
 	</form>
-	<br><br>
 	<?php 
 		if(isset($_POST['env']) && $_POST['env'] == 'envMsg') {
 			$message = $_POST['message'];
@@ -23,14 +25,14 @@
 			if(empty($message)) 
 				echo "<code>Digite uma mensagem</code>";
 			else  {
-				$query = "INSERT INTO messages (id_de, id_para, message) Values(:id_de, :id_para, :message)";
+				$query = "INSERT INTO messages (id_de, id_para, message) VALUES(:id_de, :id_para, :message)";
 				$insert = $conn->prepare($query);
 				$insert->bindValue(':id_de', $idOf);
 				$insert->bindValue(':id_para', $idFor);
 				$insert->bindValue(':message', $message);
 
 				if($insert->execute()) {
-					echo "Mensagem enviada";
+					
 				} else 
 					echo "<code>Erro ao enviar mensagem</code>";
 			}

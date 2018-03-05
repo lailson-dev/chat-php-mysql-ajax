@@ -18,3 +18,26 @@ body {
 	height: 60px;
 
 }
+
+.chat-i,
+.chat-you {
+	border-radius: 8px;
+	padding: 10px;
+	max-width: 80%;	
+	box-shadow: 0px 0px 1px #333;
+	display: table;
+	margin: 20px;
+}
+
+.chat-i {
+	background-color: #CCE2FB;
+}
+
+.chat-you {
+	background-color: #EAEAEA;
+}
+
+.emoticons-size {
+	width: 20px;
+	height: 20px;
+}
